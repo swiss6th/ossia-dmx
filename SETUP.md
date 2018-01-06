@@ -133,7 +133,7 @@ These steps are common to both configurations. Follow these steps, and then foll
 
 1. Run `sudo systemctl daemon-reload`. (Also do this whenever you've changed the `systemd` drop-ins mentioned in the last 3 steps.)
 
-1. Set up your DMX universes in OLA (e.g., at <http://sfx-player.local:9090/>). This guide assumes you'll set up at least 2 universes. All the `olat_mpd@.service` daemons, as well as `olat_sys@1.service`, require Universe 1. `olat_sys@2.service` requires Universe 2. These requirements are configured in the various `.environment` files copied to `/home/pi`. Adjust them as needed.
+1. Set up your DMX universes in OLA (e.g., at <http://sfx-player.local:9090/>). This guide assumes you'll set up at least 2 universes. All the `olat_mpd@.service` daemons, as well as `olat_sys@1.service`, require Universe 1. `olat_sys@2.service` requires Universe 2. These requirements are configured in the various `*.environment` files copied to `/home/pi`. Adjust them as needed.
 
 1. Run `sudo systemctl enable olat.target`.
 

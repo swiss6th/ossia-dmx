@@ -2,6 +2,8 @@
 
 Ossia DMX is a project that allows for DMX control over remote pixel LEDs. The system runs quite well on a Raspberry Pi, even the small Pi Zero W.
 
+![Raspberry Pi Zero W on soldering bench](pizerow_soldering.jpg "Raspberry Pi Zero W on soldering bench")
+
 ## Features
 
 - Color and brightness control of APA102 pixels (also known as Adafruit DotStar LEDs)
