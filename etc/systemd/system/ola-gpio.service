@@ -1,0 +1,15 @@
+[Unit]
+Description=OLA GPIO preparation
+BindsTo=olad
+Before=olad
+ConditionPathExists=/etc/ola/ola-gpio.conf
+
+[Service]
+Type=oneshot
+Environment='OLA_GPIO_CONF=/etc/ola/ola-gpio.conf'
+ExecStart=/bin/bash -c "grep -P '^\\h*gpio_pins\\h*=\\h*\\d' $OLA_GPIO_CONF | grep -Po '\\d+' | xargs -r -n 1 echo > /sys/class/gpio/export"
+ExecStop=/bin/bash -c "grep -P '^\\h*gpio_pins\\h*=\\h*\\d' $OLA_GPIO_CONF | grep -Po '\\d+' | xargs -r -n 1 echo > /sys/class/gpio/unexport"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
