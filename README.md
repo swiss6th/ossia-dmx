@@ -11,6 +11,7 @@ Ossia DMX is a project that allows for DMX control over remote pixel LEDs. The s
 - Up to 8 logically independent sections per physical segment
 - Power from the Pi's 5V supply
 - Support for about 24 pixels (or more, at the risk of damage to the Pi)
+- 2 DMX-controlled GPIO pins (on/off); useful for single LEDs (but don't forget a resistor!)
 
 ## Use Cases
 
@@ -18,7 +19,7 @@ I needed DMX control of wireless, lighted stage props. Small elements like cryst
 
 ## Hardware Requirements
 
-A Raspberry Pi Zero W (or Zero with a Wi-Fi adapter), some 4-pin JST connectors, and some APA102 (DotStar) pixels are all that's required. My prop Pi's are powered by small USB battery packs, but you could use any source capable of supplying at least 2.0 A current.
+A Raspberry Pi Zero W (or Zero with a Wi-Fi adapter), some 4-pin and 2-pin JST connectors, and some APA102 (DotStar) pixels are all that's required. My prop Pi's are powered by small USB battery packs, but you could use any source capable of supplying at least 2.0 A current.
 
 ## Warnings
 
