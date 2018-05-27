@@ -56,11 +56,11 @@
 
 1. Copy `wait.conf` to `/etc/systemd/system/dhcpcd.service.d`. It forces `dhcpcd` to wait up to 60 seconds for a DHCP lease, as `olad` will be useless if the Pi has no IP address. This is basically the **Wait for network at boot** feature enabled in `raspi-config`, but with a specific timeout. Alternatively, you could set a static IP address for the Pi.
 
+1. Run `sudo adduser olad gpio`.
+
 1. Copy `ola-gpio.service` to `/etc/systemd/system`.
 
 1. Run `sudo systemctl daemon-reload`.
-
-1. Run `sudo adduser olad gpio`.
 
 1. Run `sudo systemctl enable ola-gpio`.
 
