@@ -4,7 +4,7 @@
 
 1. Add an empty file called `ssh` to the `/boot` directory of the card.
 
-1. Copy over a `wpa_supplicant` configuration.
+1. Copy over a `wpa_supplicant.conf` configuration.
 
 1. Remove `console=serial0,115200` from `cmdline.txt` (see <https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=146291#p978159>).
 
@@ -36,9 +36,9 @@
 
 	1. Change your localization and timezone (if needed).
 
-	1. Set video memory allocation to the minimum of 16 MB.
-
 	1. Enable SPI.
+
+	1. Set video memory allocation to the minimum of 16 MB.
 
 1. Reboot.
 
@@ -54,9 +54,9 @@
 
 	If you need any of the other plugins, of course, leave them enabled.
 
-1. Copy `wait.conf` to `/etc/systemd/system/dhcpcd.service.d`. It forces `dhcpcd` to wait up to 60 seconds for a DHCP lease, as `olad` will be useless if the Pi has no IP address. This is basically the **Wait for network at boot** feature enabled in `raspi-config`, but with a specific timeout. Alternatively, you could set a static IP address for the Pi.
-
 1. Run `sudo adduser olad gpio`.
+
+1. Copy `wait.conf` to `/etc/systemd/system/dhcpcd.service.d`. It forces `dhcpcd` to wait up to 60 seconds for a DHCP lease, as `olad` will be useless if the Pi has no IP address. This is basically the **Wait for network at boot** feature enabled in `raspi-config`, but with a specific timeout. Alternatively, you could set a static IP address for the Pi.
 
 1. Copy `ola-gpio.service` to `/etc/systemd/system`.
 
